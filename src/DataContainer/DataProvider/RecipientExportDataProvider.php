@@ -35,12 +35,14 @@ class RecipientExportDataProvider extends NoOpDataProvider
     const SESSION_NAME = 'AVISOTA_RECIPIENT_EXPORT_SETTINGS';
 
     /**
-     * @param ModelInterface $objItem
+     * @param ModelInterface $objItem   The item.
+     * @param int            $timestamp The timestamp.
      *
      * @return ModelInterface|void
      * @SuppressWarnings(PHPMD.ExitExpression)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function save(ModelInterface $objItem)
+    public function save(ModelInterface $objItem, $timestamp = 0)
     {
         $exportSettings = $objItem->getPropertiesAsArray();
 

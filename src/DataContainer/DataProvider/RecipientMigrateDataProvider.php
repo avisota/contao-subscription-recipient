@@ -30,11 +30,14 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 class RecipientMigrateDataProvider extends NoOpDataProvider
 {
     /**
-     * @param ModelInterface $objItem
+     * @param ModelInterface $objItem   The item.
+     * @param int            $timestamp The timestamp.
      *
      * @return ModelInterface|void
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function save(ModelInterface $objItem)
+    public function save(ModelInterface $objItem, $timestamp = 0)
     {
         global $container;
 
