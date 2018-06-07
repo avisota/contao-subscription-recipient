@@ -29,6 +29,8 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * Class Unsubscribe
+ *
+ * @SuppressWarnings(PHPMD.CyclomaticComplexity)
  */
 class Unsubscribe extends AbstractRecipientForm
 {
