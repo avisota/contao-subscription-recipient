@@ -2,11 +2,11 @@
 
 /**
  * Avisota newsletter and mailing system
- * Copyright © 2016 Sven Baumann
+ * Copyright © 2018 Sven Baumann
  *
  * PHP version 5
  *
- * @copyright  way.vision 2016
+ * @copyright  way.vision 2018
  * @author     Sven Baumann <baumann.sv@gmail.com>
  * @package    avisota/contao-subscription-recipient
  * @license    LGPL-3.0+
@@ -18,6 +18,7 @@ namespace Avisota\Contao\SubscriptionRecipient\RecipientSource;
 use Avisota\Contao\Core\CoreEvents;
 use Avisota\Contao\Core\Event\CreateRecipientSourceEvent;
 use Avisota\Contao\Core\RecipientSource\RecipientSourceFactoryInterface;
+use Avisota\Contao\Salutation\SalutationRecipientSource;
 use Avisota\Contao\Entity\RecipientSource;
 use ContaoCommunityAlliance\Contao\Bindings\ContaoEvents;
 use ContaoCommunityAlliance\Contao\Bindings\Events\Controller\GenerateFrontendUrlEvent;
@@ -57,13 +58,13 @@ class RecipientsRecipientSourceFactory implements RecipientSourceFactoryInterfac
     }
 
     /**
-     * @param RecipientSource           $entity
-     * @param RecipientsRecipientSource $recipientSource
+     * @param RecipientSource                                     $entity
+     * @param RecipientsRecipientSource|SalutationRecipientSource $recipientSource
      * @SuppressWarnings(PHPMD.LongVariable)
      */
     protected function parseRecipientsManageSubscriptionPage(
         RecipientSource $entity,
-        RecipientsRecipientSource &$recipientSource
+        &$recipientSource
     ) {
         if (!$entity->getRecipientsManageSubscriptionPage()) {
             return;
@@ -97,13 +98,13 @@ class RecipientsRecipientSourceFactory implements RecipientSourceFactoryInterfac
     }
 
     /**
-     * @param RecipientSource           $entity
-     * @param RecipientsRecipientSource $recipientSource
+     * @param RecipientSource                                     $entity
+     * @param RecipientsRecipientSource|SalutationRecipientSource $recipientSource
      * @SuppressWarnings(PHPMD.LongVariable)
      */
     protected function parseRecipientsUnsubscribePage(
         RecipientSource $entity,
-        RecipientsRecipientSource &$recipientSource
+        &$recipientSource
     ) {
         if (!$entity->getRecipientsUnsubscribePage()) {
             return;
